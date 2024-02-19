@@ -1,4 +1,5 @@
 import { Header } from "../components/header/header";
+import { InputURL } from "../components/input/inputURL";
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
                     <p className="pb-2 text-lg">Minimize Links, Maximize Convenience: Your Ultimate URL Shortening Solution</p>
                 </div>
                 <div>
-
+                    <InputURL />
                 </div>
             </section>
             <section>
