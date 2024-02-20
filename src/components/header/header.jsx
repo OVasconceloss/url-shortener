@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { DarkModeButton } from "../button/darkModeButton";
 
 export const Header = () => {
     return (
@@ -17,10 +18,7 @@ export const Header = () => {
                         <i className="fa-brands fa-github"></i>
                     </button>
                 </a>
-                <button className="w-20 rounded-lg p-1 ml-2 border-2 bg-transparent text-blue-500 text-lg transition ease-linear 
-                hover:bg-blue-500 hover:text-white hover:border-blue-500">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
+                <DarkModeButton />
             </nav>
         </header>
     );
