@@ -7,12 +7,12 @@ const Home = () => {
     return (
         <>
         <Header />
-        <hr className="mt-5 border-zinc-200" />
-        <main className="p-5 m-10 flex flex-col items-center justify-center">
-            <section className="p-5 flex-col items-center justify-center">
+        <hr className="mt-5 border-zinc-200 dark:border-slate-700" />
+        <main className="px-5 py-12 h-full flex flex-col items-center justify-center dark:bg-slate-800">
+            <section className="p-5 mt-7 flex-col items-center justify-center">
                 <div className="flex flex-col items-center justify-center">
                     <h2 className="py-2 text-4xl font-bold text-blue-500 tracking-wide uper">Free URL Shortener</h2>
-                    <p className="pb-2 text-lg">Minimize Links, Maximize Convenience: Your Ultimate URL Shortening Solution</p>
+                    <p className="pb-2 text-lg dark:text-white">Minimize Links, Maximize Convenience: Your Ultimate URL Shortening Solution</p>
                 </div>
                 <div>
                     <InputURL />

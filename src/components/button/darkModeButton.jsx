@@ -13,7 +13,7 @@ export const DarkModeButton = () => {
 
     return (
         <button className="w-20 rounded-lg p-1 ml-2 border-2 bg-transparent text-blue-500 text-lg transition ease-linear 
-        hover:bg-blue-500 hover:text-white hover:border-blue-500" onClick={toggleDarkMode}>
+        hover:bg-blue-500 hover:text-white hover:border-blue-500 dark:text-white dark:hover:bg-blue-500 dark:hover:text-white dark:hover:border-blue-500" onClick={toggleDarkMode}>
             <i className={`fa-solid fa-${darkSide ? 'sun' : 'moon'}`}></i>
         </button>
     );
