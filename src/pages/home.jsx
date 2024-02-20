@@ -1,3 +1,4 @@
+import { Footer } from "../components/footer/footer";
 import { Header } from "../components/header/header";
 import { InputURL } from "../components/input/inputURL";
 import { ShortenURLResult } from "../components/shorten/shortenURL";
@@ -21,6 +22,7 @@ const Home = () => {
                 <ShortenURLResult />
             </section>
         </main>
+        <Footer /> 
         </>
     );
 };
