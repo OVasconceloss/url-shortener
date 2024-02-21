@@ -3,6 +3,9 @@ import { InputURLButton } from "./inputURLButton";
 
 export const InputURL = () => {
     const [userURL, setUserURL] = useState("");
+    const [shortenURL, setShortenURL] = useState("");
+
+    const handleShortenURL = urlShorten => setShortenURL(urlShorten);
 
     return (
         <div className="flex items-center p-5 my-2 bg-blue-500 rounded-lg space-x-3 dark:bg-slate-700">
@@ -16,7 +19,7 @@ export const InputURL = () => {
                 value={userURL}
                 onChange={(inputText) => setUserURL(inputText.target.value)}
             />
-            <InputURLButton userURL={userURL} setUserURL={setUserURL} />  
+            <InputURLButton userURL={userURL} setUserURL={setUserURL} setShortenURL={handleShortenURL} />  
         </div>
     );
 };
