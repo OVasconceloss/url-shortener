@@ -13,6 +13,7 @@ export const InputURL = () => {
                 className="p-2 w-full rounded-md outline-none placeholder:text-zinc-400 border border-blue-500 transition ease-linear
                 focus:border-blue-700 focus:placeholder:text-blue-400 
                 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-blue-500"
+                value={userURL}
                 onChange={(inputText) => setUserURL(inputText.target.value)}
             />
             <InputURLButton userURL={userURL} setUserURL={setUserURL} />  
