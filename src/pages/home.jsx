@@ -24,7 +24,7 @@ const Home = () => {
                 </div>
             </section>
             <section className="w-1/2 flex items-center justify-center">
-                <ShortenURLResult />
+                <ShortenURLResult urlShortened={urlShortened}/>
             </section>
         </main>
         <Footer /> 
