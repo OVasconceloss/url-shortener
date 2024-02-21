@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InputURLButton } from "./inputURLButton";
 
-export const InputURL = () => {
+export const InputURL = ({getShortenedURL}) => {
     const [userURL, setUserURL] = useState("");
     const [shortenURL, setShortenURL] = useState("");
 
     const handleShortenURL = urlShorten => setShortenURL(urlShorten);
+
+
+    useEffect(() => {
+        getShortenedURL(shortenURL);
+    }, [shortenURL, getShortenedURL])
 
     return (
         <div className="flex items-center p-5 my-2 bg-blue-500 rounded-lg space-x-3 dark:bg-slate-700">
