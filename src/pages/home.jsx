@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { Footer } from "../components/footer/footer";
 import { Header } from "../components/header/header";
 import { InputURL } from "../components/input/inputURL";
 import { ShortenURLResult } from "../components/shorten/shortenURL";
 
 const Home = () => {
+    const [urlShortened, setURLShortened] = useState('');
+
+    const getShortenedURl = shortenedURL => setURLShortened(shortenedURL);
+
     return (
         <>
         <Header />
@@ -15,7 +20,7 @@ const Home = () => {
                     <p className="pb-2 text-lg dark:text-white">Minimize Links, Maximize Convenience: Your Ultimate URL Shortening Solution</p>
                 </div>
                 <div>
-                    <InputURL />
+                    <InputURL getShortenedURL={getShortenedURl} />
                 </div>
             </section>
             <section className="w-1/2 flex items-center justify-center">
