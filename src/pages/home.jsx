@@ -13,8 +13,8 @@ const Home = () => {
         <>
         <Header />
         <hr className="mt-5 border-zinc-200 dark:border-slate-700" />
-        <main className="px-5 py-12 h-full flex flex-col items-center justify-center dark:bg-slate-800">
-            <section className="p-5 mt-7 flex-col items-center justify-center">
+        <main className="px-5 py-32 h-full flex flex-col items-center justify-center dark:bg-slate-800">
+            <section className="p-5 mt-9 flex-col items-center justify-center">
                 <div className="flex flex-col items-center justify-center">
                     <h2 className="py-2 text-4xl font-bold text-blue-500 tracking-wide uper">Free URL Shortener</h2>
                     <p className="pb-2 text-lg dark:text-white">Minimize Links, Maximize Convenience: Your Ultimate URL Shortening Solution</p>
