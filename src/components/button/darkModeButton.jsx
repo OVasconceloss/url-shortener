@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDarkSide } from "../../hooks/userDarkSide";
 
 export const DarkModeButton = () => {
@@ -10,6 +10,8 @@ export const DarkModeButton = () => {
         setTheme(newTheme);
         setDarkSide(!darkSide);
     }
+
+    useEffect(() => toggleDarkMode(), []);
 
     return (
         <button className="w-20 rounded-lg p-1 ml-2 border-2 bg-transparent text-blue-500 text-lg transition ease-linear 
