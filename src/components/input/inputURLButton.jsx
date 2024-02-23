@@ -1,10 +1,8 @@
 import { useState } from "react";
 import shortenURL from "../../api/shortenAPI";
 
-export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputError}) => {
+export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputError, setErrorMessage}) => {
     const [dataURL, setDataURL] = useState("");
-    const [validURL, setValidURL] = useState();
-
 
     const handleleValidateURL = (URL) => {
         const regexURL = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
@@ -27,12 +25,14 @@ export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputErro
     const handleVerifyURL = () => {
         if (userURL == '') {
             setInputError(true);
+            setErrorMessage('O campo de URL está vazio! Preencha-o com a URL que deseja encurtar!');
 
             setTimeout(() => {
                 setInputError(false);
             }, 3000);
         } else if (!handleleValidateURL(userURL)) {
             setInputError(true);
+            setErrorMessage("Essa URL possuí um formato inválido. Por favor, tente novamente!");
 
             setTimeout(() => {
                 setInputError(false);
