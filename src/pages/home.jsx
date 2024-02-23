@@ -7,10 +7,18 @@ import { ShortenURLResult } from "../components/shorten/shortenURL";
 const Home = () => {
     const [urlShortened, setURLShortened] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [urlIsLoading, setUrlIsLoading] = useState(false);
     const [errorNotification, setErrorNotification] = useState(false);
 
-    const getShortenedURl = shortenedURL => setURLShortened(shortenedURL);
-    const getErrorMessage = errorMessage => setErrorMessage(errorMessage);
+    const getShortenedURl = shortenedURL => {
+        setURLShortened(shortenedURL);
+        setUrlIsLoading(false);
+    }
+
+    const getErrorMessage = errorMessage => {
+        setErrorMessage(errorMessage);
+        setUrlIsLoading(false);
+    }
 
     useEffect(() => {
         if (errorMessage) {
@@ -33,11 +41,16 @@ const Home = () => {
                     <p className="pb-2 text-lg dark:text-white">Minimize Links, Maximize Convenience: Your Ultimate URL Shortening Solution</p>
                 </div>
                 <div>
-                    <InputURL getShortenedURL={getShortenedURl} getErrorMessage={getErrorMessage}/>
+                    <InputURL getShortenedURL={getShortenedURl} getErrorMessage={getErrorMessage} setUrlIsLoading={setUrlIsLoading}/>
                 </div>
             </section>
             <section className="w-1/2 flex items-center justify-center">
-                <ShortenURLResult urlShortened={urlShortened}/>
+                {urlIsLoading
+                ? (
+                    <h1>Carregando</h1>
+                ) : (
+                    <ShortenURLResult urlShortened={urlShortened}/>
+                )}
             </section>
         </main>
         <Footer />
