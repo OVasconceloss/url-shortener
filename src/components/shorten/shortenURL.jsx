@@ -29,8 +29,8 @@ export const ShortenURLResult = ({urlShortened}) => {
                     dark:border-slate-600 dark:hover:bg-slate-600 dark:hover:border-white dark:hover:text-white
                     data-[success=true]:bg-emerald-500 data-[success=true]:hover:bg-emerald-500 
                     data-[success=true]:dark:hover:bg-emerald-500 data-[success=true]:hover:border-emerald-500 data-[success=true]:dark:hover:border-emerald-500"
-                    onClick={handleCopyURL}>
-                        {copyURL ? <i class="fa-regular fa-circle-check"></i> : 'Copy URL to Clipboard'}
+                    onClick={() => handleCopyURL(urlShortened.link)}>
+                        {copyURL ? <i className="fa-regular fa-circle-check"></i> : 'Copy URL to Clipboard'}
                     </button>
             </div>
             :
