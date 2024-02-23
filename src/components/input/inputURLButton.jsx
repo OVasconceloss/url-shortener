@@ -1,7 +1,7 @@
 import { useState } from "react";
 import shortenURL from "../../api/shortenAPI";
 
-export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputError, setErrorMessage}) => {
+export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputError, setErrorMessage, setUrlIsLoading}) => {
     const [dataURL, setDataURL] = useState("");
 
     const handleleValidateURL = (URL) => {
@@ -10,6 +10,7 @@ export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputErro
     }
 
     const handleShortenURL = async () => {
+        setUrlIsLoading(true);
         try {
             const responseData = await shortenURL.post('/shorten', {long_url: userURL});
 
