@@ -5,9 +5,11 @@ export const InputURL = ({getShortenedURL}) => {
     const [userURL, setUserURL] = useState("");
     const [shortenURL, setShortenURL] = useState("");
     const [inputError, setInputError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleInputError = inputError => setInputError(inputError);
     const handleShortenURL = urlShorten => setShortenURL(urlShorten);
+    const handleErrorMessage = errorMessage => setErrorMessage(errorMessage);
 
     useEffect(() => {
         getShortenedURL(shortenURL);
@@ -27,7 +29,13 @@ export const InputURL = ({getShortenedURL}) => {
                 value={userURL}
                 onChange={(inputText) => setUserURL(inputText.target.value)}
             />
-            <InputURLButton userURL={userURL} setUserURL={setUserURL} setInputError={handleInputError} setShortenURL={handleShortenURL} />  
+            <InputURLButton 
+                userURL={userURL} 
+                setUserURL={setUserURL} 
+                setInputError={handleInputError} 
+                setShortenURL={handleShortenURL} 
+                setErrorMessage={handleErrorMessage}
+            />  
         </div>
     );
 };
