@@ -10,7 +10,6 @@ export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputErro
     }
 
     const handleShortenURL = async () => {
-        setUrlIsLoading(true);
         try {
             const responseData = await shortenURL.post('/shorten', {long_url: userURL});
 
@@ -40,6 +39,7 @@ export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputErro
                 setUserURL('');
             }, 3000);
         } else {
+            setUrlIsLoading(true);
             handleShortenURL();
         }
     }
