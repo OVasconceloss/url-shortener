@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { InputURLButton } from "./inputURLButton";
 
-export const InputURL = ({getShortenedURL, getErrorMessage}) => {
+export const InputURL = ({getShortenedURL, getErrorMessage, setUrlIsLoading}) => {
     const [userURL, setUserURL] = useState("");
     const [shortenURL, setShortenURL] = useState("");
     const [inputError, setInputError] = useState(false);
@@ -41,6 +41,7 @@ export const InputURL = ({getShortenedURL, getErrorMessage}) => {
                 setInputError={handleInputError} 
                 setShortenURL={handleShortenURL} 
                 setErrorMessage={handleErrorMessage}
+                setUrlIsLoading={setUrlIsLoading}
             />  
         </div>
     );
