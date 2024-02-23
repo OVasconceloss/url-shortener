@@ -5,7 +5,7 @@ export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputErro
     const [dataURL, setDataURL] = useState("");
 
     const handleleValidateURL = (URL) => {
-        const regexURL = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
+        const regexURL = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
         return regexURL.test(URL);
     }
 
