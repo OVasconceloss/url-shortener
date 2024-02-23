@@ -36,6 +36,7 @@ export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputErro
 
             setTimeout(() => {
                 setInputError(false);
+                setUserURL('');
             }, 3000);
         } else {
             handleShortenURL();
