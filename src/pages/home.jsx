@@ -13,7 +13,9 @@ const Home = () => {
 
     const getShortenedURl = shortenedURL => {
         setURLShortened(shortenedURL);
-        setUrlIsLoading(false);
+        setTimeout(() => {
+            setUrlIsLoading(false);
+        }, 2000);
     }
 
     const getErrorMessage = errorMessage => {
