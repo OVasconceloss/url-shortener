@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { InputURLButton } from "./inputURLButton";
 
-export const InputURL = ({getShortenedURL}) => {
+export const InputURL = ({getShortenedURL, getErrorMessage}) => {
     const [userURL, setUserURL] = useState("");
     const [shortenURL, setShortenURL] = useState("");
     const [inputError, setInputError] = useState(false);
@@ -9,11 +9,17 @@ export const InputURL = ({getShortenedURL}) => {
 
     const handleInputError = inputError => setInputError(inputError);
     const handleShortenURL = urlShorten => setShortenURL(urlShorten);
-    const handleErrorMessage = errorMessage => setErrorMessage(errorMessage);
+
+    const handleErrorMessage = errorMessage => {
+        setErrorMessage(errorMessage);
+        const sendErrorMessageToParent = () => getErrorMessage(errorMessage);
+
+        if (errorMessage) sendErrorMessageToParent();
+    }
 
     useEffect(() => {
         getShortenedURL(shortenURL);
-    }, [shortenURL, getShortenedURL])
+    }, [shortenURL, getShortenedURL]);
 
     return (
         <div className="flex items-center p-5 my-2 bg-blue-500 rounded-lg space-x-3 dark:bg-slate-700">
