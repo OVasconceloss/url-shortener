@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+::-webkit-scrollbar {width: 0.35rem;}
+  
+::-webkit-scrollbar-track {background-color: #FFFFFF;}
+  
+::-webkit-scrollbar-thumb {background-color: rgb(59 130 246 / 1);}
+  
+::-webkit-scrollbar-thumb:hover {background-color: rgb(51, 111, 207 / 1);}
