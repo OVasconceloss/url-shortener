@@ -25,14 +25,14 @@ export const InputURLButton = ({userURL, setUserURL, setShortenURL, setInputErro
     const handleVerifyURL = () => {
         if (userURL == '') {
             setInputError(true);
-            setErrorMessage('O campo de URL está vazio! Preencha-o com a URL que deseja encurtar!');
+            setErrorMessage('The URL field is empty! Fill it in with the URL you want to shorten!');
 
             setTimeout(() => {
                 setInputError(false);
             }, 3000);
         } else if (!handleleValidateURL(userURL)) {
             setInputError(true);
-            setErrorMessage("Essa URL possuí um formato inválido. Por favor, tente novamente!");
+            setErrorMessage("This URL has an invalid format. Please try again!");
 
             setTimeout(() => {
                 setInputError(false);
