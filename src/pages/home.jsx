@@ -6,8 +6,10 @@ import { ShortenURLResult } from "../components/shorten/shortenURL";
 
 const Home = () => {
     const [urlShortened, setURLShortened] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const getShortenedURl = shortenedURL => setURLShortened(shortenedURL);
+    const getErrorMessage = errorMessage => setErrorMessage(errorMessage);
 
     return (
         <>
@@ -20,7 +22,7 @@ const Home = () => {
                     <p className="pb-2 text-lg dark:text-white">Minimize Links, Maximize Convenience: Your Ultimate URL Shortening Solution</p>
                 </div>
                 <div>
-                    <InputURL getShortenedURL={getShortenedURl} />
+                    <InputURL getShortenedURL={getShortenedURl} getErrorMessage={getErrorMessage}/>
                 </div>
             </section>
             <section className="w-1/2 flex items-center justify-center">
