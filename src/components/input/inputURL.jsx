@@ -4,9 +4,10 @@ import { InputURLButton } from "./inputURLButton";
 export const InputURL = ({getShortenedURL}) => {
     const [userURL, setUserURL] = useState("");
     const [shortenURL, setShortenURL] = useState("");
+    const [inputError, setInputError] = useState(false);
 
+    const handleInputError = inputError => setInputError(inputError);
     const handleShortenURL = urlShorten => setShortenURL(urlShorten);
-
 
     useEffect(() => {
         getShortenedURL(shortenURL);
@@ -17,14 +18,16 @@ export const InputURL = ({getShortenedURL}) => {
             <input 
                 type="text" 
                 name="url" id="url" 
+                data-fail={inputError}
                 placeholder="Enter your URL here!"
                 className="p-2 w-full rounded-md outline-none placeholder:text-zinc-400 border border-blue-500 transition ease-linear
                 focus:border-blue-700 focus:placeholder:text-blue-400 
-                dark:border-slate-600 dark:bg-slate-800 dark:focus:border-blue-500"
+                dark:border-slate-600 dark:bg-slate-800 dark:focus:border-blue-500 dark:text-white
+                data-[fail=true]:border-red-500 data-[fail=true]:dark:border-red-500"
                 value={userURL}
                 onChange={(inputText) => setUserURL(inputText.target.value)}
             />
-            <InputURLButton userURL={userURL} setUserURL={setUserURL} setShortenURL={handleShortenURL} />  
+            <InputURLButton userURL={userURL} setUserURL={setUserURL} setInputError={handleInputError} setShortenURL={handleShortenURL} />  
         </div>
     );
 };
