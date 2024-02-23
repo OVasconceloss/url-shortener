@@ -7,11 +7,12 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/ovasconceloss/url-shortener">
   
-  <a href="https://github.com/tgmarinho/README-ecoleta/commits/master">
+  <a href="https://github.com/ovasconcelos/url-shortener/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ovasconceloss/url-shortener">
   </a>
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+   
    <a href="https://github.com/ovasconceloss/url-shortener/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/ovasconceloss/url-shortener?style=social">
   </a> 
