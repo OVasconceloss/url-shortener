@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Footer } from "../components/footer/footer";
 import { Header } from "../components/header/header";
 import { InputURL } from "../components/input/inputURL";
@@ -7,9 +7,20 @@ import { ShortenURLResult } from "../components/shorten/shortenURL";
 const Home = () => {
     const [urlShortened, setURLShortened] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [errorNotification, setErrorNotification] = useState(false);
 
     const getShortenedURl = shortenedURL => setURLShortened(shortenedURL);
     const getErrorMessage = errorMessage => setErrorMessage(errorMessage);
+
+    useEffect(() => {
+        if (errorMessage) {
+            setErrorNotification(true);
+            setTimeout(() => {
+                setErrorNotification(false);
+                setErrorMessage('');
+            }, 3000);
+        }
+    }, [errorMessage]);
 
     return (
         <>
@@ -29,7 +40,12 @@ const Home = () => {
                 <ShortenURLResult urlShortened={urlShortened}/>
             </section>
         </main>
-        <Footer /> 
+        <Footer />
+        {errorNotification && (
+            <div className="w-[25rem] fixed bottom-5 right-5 bg-red-500 text-white py-2 px-4 rounded shadow">
+                {errorMessage}
+            </div>
+        )} 
         </>
     );
 };
