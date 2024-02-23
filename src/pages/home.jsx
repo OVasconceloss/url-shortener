@@ -3,6 +3,7 @@ import { Footer } from "../components/footer/footer";
 import { Header } from "../components/header/header";
 import { InputURL } from "../components/input/inputURL";
 import { ShortenURLResult } from "../components/shorten/shortenURL";
+import { LoadingAnimation } from "../components/loading/loadingAnimation";
 
 const Home = () => {
     const [urlShortened, setURLShortened] = useState('');
@@ -47,7 +48,7 @@ const Home = () => {
             <section className="w-1/2 flex items-center justify-center">
                 {urlIsLoading
                 ? (
-                    <h1>Carregando</h1>
+                    <LoadingAnimation />
                 ) : (
                     <ShortenURLResult urlShortened={urlShortened}/>
                 )}
