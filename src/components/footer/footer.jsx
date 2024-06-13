@@ -17,12 +17,6 @@ export const Footer = () => {
             <div className="p-1 mt-3 w-full flex items-center justify-between bg-blue-500 rounded-t-md dark:bg-slate-600">
                 <h4 className="text-white tracking-wide">copyright &copy; {currentYear} Victor Vasconcelos</h4>
                 <div>
-                    <Link className="p-2 ml-2 text-lg transition ease-linear border-b-2 text-white border-blue-500 
-                    hover:border-white 
-                    dark:text-white dark:border-slate-600 dark:hover:text-blue-500 dark:hover:border-blue-500"to={'/'}>Home</Link> 
-                    <Link className="p-2 ml-3 text-lg transition ease-linear border-b-2 text-white border-blue-500 
-                    hover:border-white 
-                    dark:text-white dark:border-slate-600 dark:hover:text-blue-500 dark:hover:border-blue-500"to={'/about'}>About</Link>  
                     <a href="https://github.com/OVasconceloss/url-shortener" target="_blank">
                         <button className="w-20 p-1 ml-8 rounded-lg border-2 bg-blue-500 text-white text-lg transition ease-linear 
                         hover:bg-white hover:text-blue-500 hover:border-blue-500 
